@@ -1,0 +1,2 @@
+DROP SCHEMA IF EXISTS calendar;
+CREATE SCHEMA calendar;

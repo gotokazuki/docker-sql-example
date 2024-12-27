@@ -1,0 +1,1 @@
+CREATE DATABASE calendar TEMPLATE template0;
