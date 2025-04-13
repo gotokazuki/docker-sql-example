@@ -3,12 +3,15 @@ services:
     container_name: postgres
     # https://hub.docker.com/_/postgres
     image: postgres:17
+    command: -c 'config_file=/etc/postgresql/postgresql.conf'
+    restart: unless-stopped
     environment:
       - POSTGRES_PASSWORD=pass
     ports:
       - 5432:5432
     volumes:
       - ./postgres/initdb:/docker-entrypoint-initdb.d
+      - ./postgres/postgresql.conf:/etc/postgresql/postgresql.conf
       - postgres-data:/var/lib/postgresql/data
   mysql:
     container_name: mysql
